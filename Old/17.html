@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obaida Alnaheel - Senior .NET Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2E5A88;
+            --primary-light: #3a70ac;
+            --secondary: #5B7E9A;
+            --accent: #E63946;
+            --light: #F1F5F9;
+            --dark: #2D3748;
+            --gray: #718096;
+            --light-gray: #e2e8f0;
+            --background: #ffffff;
+            --text: #2d3748;
+            --text-light: #4a5568;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--text);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .resume-container {
+            background: var(--background);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 12px;
+            padding: 40px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .resume-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+        
+        .header-content {
+            flex: 2;
+        }
+        
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            flex: 0 0 auto;
+        }
+        
+        h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+        
+        .title {
+            color: var(--secondary);
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-light);
+        }
+        
+        .contact-item i {
+            color: var(--primary);
+            font-size: 1.1rem;
+            width: 24px;
+        }
+        
+        .contact-item a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin: 35px 0 20px 0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--light-gray);
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        h3 {
+            color: var(--secondary);
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .job {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background: var(--light);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .job:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .company {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+        
+        .date {
+            color: var(--gray);
+            font-style: italic;
+            background: var(--light-gray);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+        
+        ul {
+            padding-left: 22px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            line-height: 1.5;
+            position: relative;
+        }
+        
+        li:before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        
+        .metric {
+            font-weight: 600;
+            color: var(--primary);
+            background: rgba(46, 90, 136, 0.1);
+            padding: 0 5px;
+            border-radius: 3px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* عمودين ثابتين */
+            gap: 25px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 900px) {
+            .skills-grid {
+                grid-template-columns: 1fr; /* موبايل بيضل عمود واحد */
+            }
+        }
+        
+        .skill-category {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .skill-category h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .project {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        
+        .project:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 65% 32%;
+            gap: 3%;
+        }
+        
+        .summary {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 25px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .summary h2 {
+            color: white;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .summary li:before {
+            color: var(--light-gray);
+        }
+        
+        .summary .metric {
+            color: #ffd700;
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .badge-primary {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .badge-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .badge-accent {
+            background: var(--accent);
+            color: white;
+        }
+        
+        @media (max-width: 900px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .resume-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        .print-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 12px 25px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        
+        .print-btn:hover {
+            background: var(--primary-light);
+        }
+        
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed var(--light-gray);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #eee;
+            border-radius: 4px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        .education-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: var(--light);
+            border-radius: 8px;
+        }
+        
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .award-item {
+            padding: 15px;
+            background: var(--light);
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .award-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="resume-header">
+            <div class="header-content">
+                <h1>Obaida Alnaheel</h1>
+                <p class="title">Senior .NET Developer & Solutions Architect</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>United Arab Emirates – Sharjah</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+971 56 283 2528</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:alnaheel.obaida@gmail.com">alnaheel.obaida@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/obaida28/">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="https://obaida28.github.io/">Portfolio</a>
+                    </div>
+                </div>
+            </div>
+            <img src="https://obaida28.github.io/img/profile.jpg" alt="Profile" class="profile-img">
+        </div>
+
+        <div class="summary">
+            <h2>Professional Summary</h2>
+            <ul>
+                <li>Results-driven <span class="metric">Senior .NET Developer</span> with proven expertise in designing, developing, and optimizing enterprise-level applications across diverse industries</li>
+                <li>Skilled in modern software architecture, cloud-based solutions, and scalable system design, ensuring high performance and maintainability</li>
+                <li>Experienced collaborator with strong problem-solving skills, capable of translating complex business requirements into effective technical solutions</li>
+                <li>Seeking a senior .NET developer role to apply technical leadership in challenging environments</li>
+            </ul>
+        </div>
+
+
+        <div class="section">
+            <h2>Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <div>
+                        <span class="badge badge-primary">C#</span>
+                        <span class="badge badge-primary">SQL</span>
+                        <span class="badge badge-primary">JavaScript/TypeScript</span>
+                        <span class="badge badge-primary">HTML5/CSS3</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Frameworks & Technologies</h4>
+                    <div>
+                        <span class="badge badge-secondary">.NET Framework/Core</span>
+                        <span class="badge badge-secondary">ASP.NET MVC/Web API</span>
+                        <span class="badge badge-secondary">Entity Framework Core</span>
+                        <span class="badge badge-secondary">ABP Framework</span>
+                        <span class="badge badge-secondary">RESTful Services</span>
+                        <span class="badge badge-secondary">Microservices</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Databases & Tools</h4>
+                    <div>
+                        <span class="badge badge-accent">SQL Server</span>
+                        <span class="badge badge-accent">MySQL</span>
+                        <span class="badge badge-accent">Database Design</span>
+                        <span class="badge badge-accent">Git & Azure DevOps</span>
+                        <span class="badge badge-accent">Docker & CI/CD</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Cloud Technologies</h4>
+                    <div>
+                        <span class="badge badge-primary">Microsoft Azure</span>
+                        <span class="badge badge-primary">Azure Functions</span>
+                        <span class="badge badge-primary">Azure SQL Database</span>
+                        <span class="badge badge-primary">App Services</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Professional Experience</h2>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>IT Support & Software Developer</h3>
+                    <span class="date">September 2024 – Present</span>
+                </div>
+                <p class="company">Texas Equipment, UAE, Sharjah</p>
+                <ul>
+                    <li>Managed WordPress website with <span class="metric">2,000+ product entries</span> and custom enhancements that <span class="metric">increased user engagement by 40%</span></li>
+                    <li>Coordinated software deployment with US branch, <span class="metric">accelerating installation processes by 50%</span></li>
+                    <li>Architected internal applications for price quotes and inventory management, <span class="metric">reducing manual processing by 25 hours weekly</span></li>
+                    <li>Maintained technical infrastructure with <span class="metric">95% device uptime</span> through strategic configuration</li>
+                    <li>Executed multi-platform marketing campaigns that <span class="metric">expanded company visibility by 60%</span></li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>Back-End Developer</h3>
+                    <span class="date">August 2023 – January 2024</span>
+                </div>
+                <p class="company">Intology, Remote</p>
+                <ul>
+                    <li>Designed and implemented database and API integrations for Flexia WMS,<span class="metric">boosting system reliability by 75% and performance by 100%</span></li>
+                    <li>Collaborated with <span class="metric">6-member cross-functional team</span> to ensure seamless operations</li>
+                    <li>Optimized back-end processes handling <span class="metric">5,000+ monthly inventory transactions</span></li>
+                    <li>Streamlined order processing systems, <span class="metric">increasing accuracy by 60% and reducing delays by 45%</span></li>
+                    <li>Implemented caching strategies that <span class="metric">slashed API response times by 30%</span></li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>.NET Developer</h3>
+                    <span class="date">September 2018 – January 2023</span>
+                </div>
+                <p class="company">Robotic Mind, Syria, Lattakia</p>
+                <ul>
+                    <li>Developed <span class="metric">5+ web and mobile projects</span> including online auto parts store and service platform</li>
+                    <li>Established scalable database architecture with Android integration, <span class="metric">improving operational efficiency by 80%</span></li>
+                    <li>Enhanced car parts management processes, <span class="metric">contributing to 85% business growth</span></li>
+                    <li>Created RESTful APIs <span class="metric">reducing data retrieval time by 65%</span></li>
+                    <li>Trained <span class="metric">2 junior developers</span> on .NET best practices and database design</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Projects & Achievements</h2>
+            
+            <div class="project">
+                <div class="job-header">
+                    <h3>Marten Do - Delivery Management System</h3>
+                    <span class="date">Robotic Mind | Full-Stack Development</span>
+                </div>
+                <ul>
+                    <li>Implemented admin dashboard and delivery application <span class="metric">managing 2,000+ monthly orders and 2,500 products</span></li>
+                    <li>Optimized routing algorithms<span class="metric">increasing operational efficiency by 25%</span></li>
+                    <li>Constructed inventory management features that <span class="metric">lowered costs by 15%</span> through waste reduction</li>
+                    <li>Integrated tracking system that <span class="metric">increased customer satisfaction by 35%</span></li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <div class="job-header">
+                    <h3>Flexia - Warehouse Management System</h3>
+                    <span class="date">Intology | Back-End Architecture</span>
+                </div>
+                <ul>
+                    <li>Constructed scalable WMS that <span class="metric">accelerated order processing by 50%</span></li>
+                    <li>Built inventory tracking features<span class="metric">enhancing accuracy by 60%</span></li>
+                    <li>Architected system infrastructure handling <span class="metric">5,000+ monthly transactions</span> with 99.9% uptime</li>
+                    <li>Established reporting dashboard that <span class="metric">cut manual reporting time by 70%</span></li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <div class="job-header">
+                    <h3>TIS - Texas Inventory System</h3>
+                    <span class="date">Texas Equipment | Internal System Development</span>
+                </div>
+                <ul>
+                    <li>Constructed inventory management system <span class="metric">tracking 1,000+ SKUs across multiple locations</span></li>
+                    <li>Implemented role-based access control that <span class="metric">improved accountability by 80%</span></li>
+                    <li>Introduced audit tracking features that <span class="metric">minimized discrepancies by 45%</span></li>
+                    <li>Automated stock alerts that <span class="metric">decreased stockouts by 60%</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="two-column">
+            <div>
+                <div class="section">
+                    <h2>Education & Credentials</h2>
+                    <div class="education-item">
+                        <h3>Master's Degree in Web Science</h3>
+                        <ul>
+                            <li>Syrian Virtual University</li>
+                            <li>February 2024 – Present</li>
+                            <li>Focus: Advanced Web Technologies, Cloud Architecture</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="education-item">
+                        <h3>Bachelor of Computer Science</h3>
+                        <ul>
+                            <li>Tishreen University, Syria</li>
+                            <li>Software Engineering Minor</li>
+                            <li>September 2015 – September 2023</li>
+                            <li>Graduated with Honors</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- <div class="education-item">
+                        <h3>Professional Certifications</h3>
+                        <ul>
+                            <li>Microsoft Certified: Azure Developer Associate</li>
+                            <li>Microsoft Certified: .NET Framework Application Development</li>
+                            <li>ASP.NET Core Certification - Microsoft</li>
+                        </ul>
+                    </div> -->
+                </div>
+            </div>
+            
+            <div>
+                <div class="section">
+                    <h2>Languages</h2>
+                    <div class="language-item">
+                        <span><strong>Arabic:</strong> Native Proficiency</span>
+                        <div style="width: 100%">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 100%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="language-item">
+                        <span><strong>English:</strong> Professional Working Proficiency</span>
+                        <div style="width: 100%">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="section">
+                    <h2>Awards & Recognition</h2>
+                    <div class="awards-grid">
+                        <div class="award-item">
+                            <i class="fas fa-trophy"></i>
+                            <p>Employee of the Year<br>Robotic Mind (2022)</p>
+                        </div>
+                        <div class="award-item">
+                            <i class="fas fa-award"></i>
+                            <p>Best Technical Solution Award<br>Intology (2023)</p>
+                        </div>
+                    </div>
+                </div> -->
+
+                <div class="section">
+                    <h2>Professional Affiliations</h2>
+                    <ul>
+                        <li>Microsoft Developer Network (MSDN)</li>
+                        <li>.NET Foundation Member</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // يمكن إضافة أي تفاعلات إضافية هنا إذا لزم الأمر
+    </script>
+</body>
+</html>
