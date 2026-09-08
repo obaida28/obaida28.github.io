@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obaida Alnaheel - Dot Net Developer</title>
+    <style>
+        :root {
+            --primary-color: #2E86C1;
+            --secondary-color: #F8F9F9;
+            --accent-color: #E74C3C;
+            --text-color: #333;
+            --light-text: #666;
+            --border-color: #ddd;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: 70% 30%;
+            gap: 20px;
+        }
+        
+        header {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h1 {
+            font-size: 32px;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        h2 {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin: 25px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        h3 {
+            font-size: 18px;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+        
+        .contact-info p {
+            margin: 4px 0;
+            text-align: right;
+        }
+        
+        .job-title {
+            color: var(--light-text);
+            font-size: 18px;
+            font-weight: normal;
+        }
+        
+        .date-location {
+            font-style: italic;
+            color: var(--light-text);
+            margin-bottom: 8px;
+        }
+        
+        .main-content {
+            grid-column: 1 / 2;
+        }
+        
+        .sidebar {
+            grid-column: 2 / 3;
+        }
+        
+        .section {
+            margin-bottom: 25px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .highlight {
+            background-color: var(--secondary-color);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .keyword-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        
+        .keyword {
+            background-color: var(--secondary-color);
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        
+        .achievement {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .metric {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                flex-direction: column;
+            }
+            
+            .contact-info p {
+                text-align: left;
+            }
+            
+            .main-content, .sidebar {
+                grid-column: 1 / -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Obaida Alnaheel</h1>
+            <p class="job-title">Dot Net Developer</p>
+        </div>
+        <div class="contact-info">
+            <p>United Arab Emirates – Sharjah</p>
+            <p>+971 56 283 2528</p>
+            <p><a href="mailto:alnaheel.obaida@gmail.com">alnaheel.obaida@gmail.com</a></p>
+            <p><a href="https://www.linkedin.com/in/obaida28/">LinkedIn Profile</a></p>
+        </div>
+    </header>
+
+    <div class="container">
+        <main class="main-content">
+            <section class="section">
+                <h2>Professional Summary</h2>
+                <div class="highlight">
+                    <p>Proficient Dot Net Developer with 5+ years of experience in building and implementing scalable, efficient systems using C#, ASP.NET, .NET Core, SQL Server, and ABP Framework. Spearheaded the creation of a new warehouse management system module, streamlining inventory tracking and reducing order fulfillment time by 15%, enhancing overall efficiency. Seeking to leverage technical expertise and problem-solving skills in a challenging developer role.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Work Experience</h2>
+
+                <div class="achievement">
+                    <h3>IT Support</h3>
+                    <p class="date-location">Texas Equipment, UAE, Sharjah | September 2024 – Present</p>
+                    <ul>
+                        <li>Oversaw the company WordPress website and uploaded over <span class="metric">2,000 product entries</span> while implementing custom enhancements, boosting user engagement by <span class="metric">40%</span></li>
+                        <li>Coordinated with the USA branch to deploy software on client devices, accelerating installation speed by <span class="metric">50%</span></li>
+                        <li>Developed two internal applications for price quotes and inventory management, streamlining operational workflows and improving staff productivity</li>
+                        <li>Configured new laptops and resolved technical issues for staff and clients, achieving <span class="metric">95% device uptime</span></li>
+                        <li>Directed marketing campaigns across Facebook, Instagram, WhatsApp, and TikTok, increasing company visibility by <span class="metric">60%</span></li>
+                    </ul>
+                </div>
+
+                <div class="achievement">
+                    <h3>Back-End Developer</h3>
+                    <p class="date-location">Intology, Remotely | August 2023 – January 2024</p>
+                    <ul>
+                        <li>Implemented database and API integrations for the Flexia warehouse management system, enhancing reliability by <span class="metric">75%</span> and scalability by <span class="metric">100%</span></li>
+                        <li>Collaborated with a cross-functional team of <span class="metric">6 members</span> to ensure smooth operations and consistent performance across multiple departments</li>
+                        <li>Enhanced back-end processes supporting front-end and mobile applications, handling <span class="metric">5,000+ monthly inventory transactions</span> efficiently and improving user satisfaction by <span class="metric">25%</span></li>
+                        <li>Optimized order processing and inventory tracking, boosting accuracy by <span class="metric">60%</span> and reducing operational delays</li>
+                    </ul>
+                </div>
+
+                <div class="achievement">
+                    <h3>Dot Net Developer</h3>
+                    <p class="date-location">Robotic Mind, Syria, Lattakia | September 2018 – January 2023</p>
+                    <ul>
+                        <li>Delivered over <span class="metric">five web and mobile projects</span>, including an online auto parts store and service platform, improving operational workflow efficiency</li>
+                        <li>Built database architecture and integrated back-end code with Android applications, increasing operational efficiency by <span class="metric">80%</span></li>
+                        <li>Refined processes for car parts and repair shop management, achieving <span class="metric">85% business growth</span> and enhancing user satisfaction</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Key Projects</h2>
+                
+                <div class="achievement">
+                    <h3>Marten Do</h3>
+                    <p>Implemented a multi-staff admin dashboard and delivery app; processed <span class="metric">2,000+ monthly orders</span> and managed <span class="metric">2,500 products</span>, improving efficiency by <span class="metric">25%</span> and cutting operational costs by <span class="metric">15%</span>. <a href="https://martendo.net/">View Project</a></p>
+                </div>
+                
+                <div class="achievement">
+                    <h3>Albasheer</h3>
+                    <p>Created an admin dashboard managing <span class="metric">2,000+ items</span>; integrated real-time Telegram notifications for orders, boosting response rates by <span class="metric">50%</span>. <a href="https://www.albasheer-iraq.com/">View Project</a></p>
+                </div>
+                
+                <div class="achievement">
+                    <h3>Flexia Warehouse Management System</h3>
+                    <p>Deployed a comprehensive warehouse management system for Intology; accelerated order processing by <span class="metric">50%</span> and enhanced inventory accuracy by <span class="metric">60%</span>, supporting <span class="metric">5,000+ monthly transactions</span>.</p>
+                </div>
+                
+                <div class="achievement">
+                    <h3>TIS (Texas Inventory System)</h3>
+                    <p>Built inventory system to track <span class="metric">1,000+ SKUs</span> across warehouses; integrated role-based access and audit tracking, improving accountability by <span class="metric">80%</span>.</p>
+                </div>
+                
+                <div class="achievement">
+                    <h3>Personal Portfolio</h3>
+                    <p>Showcased <span class="metric">60% of projects</span> using HTML, CSS, JS; included <span class="metric">4 interactive and 3 real projects</span>. <a href="https://obaida28.github.io/">View Portfolio</a></p>
+                </div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <section class="section">
+                <h2>Core Competencies</h2>
+                <div class="keyword-section">
+                    <span class="keyword">.NET Framework</span>
+                    <span class="keyword">C#</span>
+                    <span class="keyword">ASP.NET MVC</span>
+                    <span class="keyword">.NET Core</span>
+                    <span class="keyword">ABP Framework</span>
+                    <span class="keyword">SQL Server</span>
+                    <span class="keyword">Database Design</span>
+                    <span class="keyword">API Development</span>
+                    <span class="keyword">Web Services</span>
+                    <span class="keyword">Git</span>
+                    <span class="keyword">Azure Boards</span>
+                    <span class="keyword">HTML/CSS</span>
+                    <span class="keyword">System Architecture</span>
+                    <span class="keyword">WordPress</span>
+                    <span class="keyword">Inventory Management</span>
+                    <span class="keyword">WMS</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Education</h2>
+                <div class="achievement">
+                    <h3>Master's in Web Sciences</h3>
+                    <p>Syrian Virtual University<br>February 2024 – Present</p>
+                </div>
+                
+                <div class="achievement">
+                    <h3>BSc Computer Science</h3>
+                    <p>Software Engineering Minor<br>Tishreen University<br>September 2015 – September 2023</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Languages</h2>
+                <div class="achievement">
+                    <p><strong>Arabic:</strong> Native</p>
+                    <p><strong>English:</strong> Intermediate (Professional Proficiency)</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Certifications</h2>
+                <div class="achievement">
+                    <p>• ASP.NET Core Certification</p>
+                    <p>• SQL Server Management</p>
+                    <p>• Azure Fundamentals</p>
+                </div>
+            </section>
+        </aside>
+    </div>
+</body>
+</html>

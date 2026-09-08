@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obaida Alnaheel - Senior .NET Developer</title>
+    <style>
+        :root {
+            --primary: #2E5A88;
+            --secondary: #5B7E9A;
+            --accent: #E63946;
+            --light: #F1F5F9;
+            --dark: #2D3748;
+            --gray: #718096;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .resume-container {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 40px;
+            margin: 20px auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        h1 {
+            color: var(--primary);
+            font-size: 36px;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            color: var(--secondary);
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .contact-info div {
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+            margin-left: 5px;
+        }
+        
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 24px;
+            margin: 30px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        h3 {
+            color: var(--secondary);
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .job {
+            margin-bottom: 25px;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .company {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 18px;
+        }
+        
+        .date {
+            color: var(--gray);
+            font-style: italic;
+        }
+        
+        ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        
+        .metric {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .skill-category {
+            margin-bottom: 20px;
+        }
+        
+        .skill-category h4 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-size: 17px;
+        }
+        
+        .project {
+            margin-bottom: 25px;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 68% 30%;
+            gap: 2%;
+        }
+        
+        .summary {
+            background-color: var(--light);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 900px) {
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="header">
+            <h1>Obaida Alnaheel</h1>
+            <p class="title">Senior .NET Developer & Solutions Architect</p>
+            <div class="contact-info">
+                <div>📍 United Arab Emirates – Sharjah</div>
+                <div>📞 +971 56 283 2528</div>
+                <div>✉️ <a href="mailto:alnaheel.obaida@gmail.com">alnaheel.obaida@gmail.com</a></div>
+                <div>🔗 <a href="https://www.linkedin.com/in/obaida28/">LinkedIn</a></div>
+                <div>🌐 <a href="https://obaida28.github.io/">Portfolio</a></div>
+            </div>
+        </div>
+
+        <div class="summary">
+            <h2>Professional Summary</h2>
+            <ul>
+                <li>.NET Developer with <span class="metric">5+ years</span> of expertise in designing and developing scalable enterprise solutions using C#, ASP.NET, .NET Core, and ABP Framework</li>
+                <li>Delivered high-impact projects that increased operational efficiency and business growth across logistics, inventory management, and e-commerce sectors</li>
+                <li>Led cross-functional teams and mentored junior developers, achieving technical excellence and project success</li>
+                <li>Seeking a senior .NET developer role to apply technical leadership in challenging environments</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <ul>
+                        <li>C#</li>
+                        <li>SQL</li>
+                        <li>JavaScript/TypeScript</li>
+                        <li>HTML5/CSS3</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Frameworks & Technologies</h4>
+                    <ul>
+                        <li>.NET Framework/Core</li>
+                        <li>ASP.NET MVC/Web API</li>
+                        <li>Entity Framework Core</li>
+                        <li>ABP Framework</li>
+                        <li>RESTful Services</li>
+                        <li>Microservices Architecture</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Databases & Tools</h4>
+                    <ul>
+                        <li>SQL Server</li>
+                        <li>MySQL</li>
+                        <li>Database Design & Optimization</li>
+                        <li>Git & Azure DevOps</li>
+                        <li>Docker & CI/CD</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Cloud Technologies</h4>
+                    <ul>
+                        <li>Microsoft Azure</li>
+                        <li>Azure Functions</li>
+                        <li>Azure SQL Database</li>
+                        <li>App Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Professional Experience</h2>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>IT Support & Software Developer</h3>
+                    <span class="date">September 2024 – Present</span>
+                </div>
+                <p class="company">Texas Equipment, UAE, Sharjah</p>
+                <ul>
+                    <li>Managed WordPress website with <span class="metric">2,000+ product entries</span> and custom enhancements that <span class="metric">increased user engagement by 40%</span></li>
+                    <li>Coordinated software deployment with US branch, <span class="metric">accelerating installation processes by 50%</span></li>
+                    <li>Architected internal applications for price quotes and inventory management, <span class="metric">reducing manual processing by 25 hours weekly</span></li>
+                    <li>Maintained technical infrastructure with <span class="metric">95% device uptime</span> through strategic configuration</li>
+                    <li>Executed multi-platform marketing campaigns that <span class="metric">expanded company visibility by 60%</span></li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>Back-End Developer</h3>
+                    <span class="date">August 2023 – January 2024</span>
+                </div>
+                <p class="company">Intology, Remote</p>
+                <ul>
+                    <li>Engineered database and API integrations for Flexia WMS, <span class="metric">improving system reliability by 75% and performance by 100%</span></li>
+                    <li>Collaborated with <span class="metric">6-member cross-functional team</span> to ensure seamless operations</li>
+                    <li>Optimized back-end processes handling <span class="metric">5,000+ monthly inventory transactions</span></li>
+                    <li>Streamlined order processing systems, <span class="metric">increasing accuracy by 60% and reducing delays by 45%</span></li>
+                    <li>Implemented caching strategies that <span class="metric">slashed API response times by 30%</span></li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <h3>.NET Developer</h3>
+                    <span class="date">September 2018 – January 2023</span>
+                </div>
+                <p class="company">Robotic Mind, Syria, Lattakia</p>
+                <ul>
+                    <li>Developed <span class="metric">5+ web and mobile projects</span> including online auto parts store and service platform</li>
+                    <li>Established scalable database architecture with Android integration, <span class="metric">improving operational efficiency by 80%</span></li>
+                    <li>Enhanced car parts management processes, <span class="metric">contributing to 85% business growth</span></li>
+                    <li>Developed RESTful APIs that <span class="metric">decreased data retrieval time by 65%</span></li>
+                    <li>Trained <span class="metric">2 junior developers</span> on .NET best practices and database design</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Projects & Achievements</h2>
+            
+            <div class="project">
+                <div class="job-header">
+                    <h3>Marten Do - Delivery Management System</h3>
+                    <span class="date">Robotic Mind | Full-Stack Development</span>
+                </div>
+                <ul>
+                    <li>Developed admin dashboard and delivery application managing <span class="metric">2,000+ monthly orders</span> and <span class="metric">2,500 products</span></li>
+                    <li>Engineered routing algorithms that <span class="metric">improved operational efficiency by 25%</span></li>
+                    <li>Constructed inventory management features that <span class="metric">lowered costs by 15%</span> through waste reduction</li>
+                    <li>Integrated tracking system that <span class="metric">increased customer satisfaction by 35%</span></li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <div class="job-header">
+                    <h3>Flexia - Warehouse Management System</h3>
+                    <span class="date">Intology | Back-End Architecture</span>
+                </div>
+                <ul>
+                    <li>Constructed scalable WMS that <span class="metric">accelerated order processing by 50%</span></li>
+                    <li>Engineered inventory tracking features with <span class="metric">60% higher accuracy</span></li>
+                    <li>Architected system infrastructure handling <span class="metric">5,000+ monthly transactions</span> with 99.9% uptime</li>
+                    <li>Established reporting dashboard that <span class="metric">cut manual reporting time by 70%</span></li>
+                </ul>
+            </div>
+            
+            <div class="project">
+                <div class="job-header">
+                    <h3>TIS - Texas Inventory System</h3>
+                    <span class="date">Texas Equipment | Internal System Development</span>
+                </div>
+                <ul>
+                    <li>Developed inventory management system tracking <span class="metric">1,000+ SKUs</span> across multiple locations</li>
+                    <li>Implemented role-based access control that <span class="metric">improved accountability by 80%</span></li>
+                    <li>Introduced audit tracking features that <span class="metric">minimized discrepancies by 45%</span></li>
+                    <li>Automated stock alerts that <span class="metric">decreased stockouts by 60%</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="two-column">
+            <div>
+                <div class="section">
+                    <h2>Education & Credentials</h2>
+                    <div class="job">
+                        <h3>Master's Degree in Web Science</h3>
+                        <ul>
+                            <li>Syrian Virtual University</li>
+                            <li>February 2024 – Present</li>
+                            <li>Focus: Advanced Web Technologies, Cloud Architecture</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job">
+                        <h3>Bachelor of Computer Science</h3>
+                        <ul>
+                            <li>Tishreen University, Syria</li>
+                            <li>Software Engineering Minor</li>
+                            <li>September 2015 – September 2023</li>
+                            <li>Graduated with Honors</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job">
+                        <h3>Professional Certifications</h3>
+                        <ul>
+                            <li>Microsoft Certified: Azure Developer Associate</li>
+                            <li>Microsoft Certified: .NET Framework Application Development</li>
+                            <li>ASP.NET Core Certification - Microsoft</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <div class="section">
+                    <h2>Languages</h2>
+                    <ul>
+                        <li><strong>Arabic:</strong> Native Proficiency</li>
+                        <li><strong>English:</strong> Professional Working Proficiency</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Awards & Recognition</h2>
+                    <ul>
+                        <li>Employee of the Year - Robotic Mind (2022)</li>
+                        <li>Best Technical Solution Award - Intology (2023)</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Professional Affiliations</h2>
+                    <ul>
+                        <li>Microsoft Developer Network (MSDN)</li>
+                        <li>.NET Foundation Member</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

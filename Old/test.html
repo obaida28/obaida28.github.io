@@ -1,0 +1,158 @@
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Shopping Cart";
+}
+
+<div class="container mt-5 mb-5">
+    <h2 class="text-center mb-4">🛒 Shopping Cart</h2>
+
+    <div class="table-responsive shadow-sm rounded">
+        <table class="table table-striped align-middle text-center">
+            <thead class="thead-light">
+                <tr>
+                    <th>Item Name</th>
+                    <th>Description</th>
+                    <th>Quantity</th>
+                    <th>Unit Price (AED)</th>
+                    <th>Discount (%)</th>
+                    <th>Total (AED)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="cartItems">
+                <!-- Example row -->
+                <tr>
+                    <td>Air Compressor</td>
+                    <td>Heavy-duty workshop compressor</td>
+                    <td>
+                        <input type="number" class="form-control text-center quantity-input" value="1" min="1">
+                    </td>
+                    <td class="price">1500</td>
+                    <td>
+                        <input type="number" class="form-control text-center discount-input" value="0" min="0" max="100">
+                    </td>
+                    <td class="total">1500</td>
+                    <td>
+                        <button class="btn btn-outline-danger btn-sm remove-btn">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Summary section -->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="notes" class="font-weight-bold">Notes (Optional)</label>
+                <textarea id="notes" class="form-control" rows="3" placeholder="Add any specific notes..."></textarea>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Summary</h5>
+                    <hr>
+                    <p class="d-flex justify-content-between">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">1500 AED</span>
+                    </p>
+                    <p class="d-flex justify-content-between">
+                        <span>Discounts:</span>
+                        <span id="totalDiscount">0 AED</span>
+                    </p>
+                    <hr>
+                    <h5 class="d-flex justify-content-between">
+                        <span>Grand Total:</span>
+                        <span id="grandTotal">1500 AED</span>
+                    </h5>
+                    <button id="checkoutBtn" class="btn btn-success btn-block mt-3">
+                        <i class="fas fa-credit-card"></i> Proceed to Checkout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function updateTotals() {
+            let subtotal = 0;
+            let totalDiscount = 0;
+
+            $("#cartItems tr").each(function () {
+                const price = parseFloat($(this).find(".price").text()) || 0;
+                const quantity = parseInt($(this).find(".quantity-input").val()) || 0;
+                const discount = parseFloat($(this).find(".discount-input").val()) || 0;
+
+                const itemTotal = price * quantity;
+                const itemDiscount = (itemTotal * discount) / 100;
+                const finalTotal = itemTotal - itemDiscount;
+
+                subtotal += itemTotal;
+                totalDiscount += itemDiscount;
+
+                $(this).find(".total").text(finalTotal.toFixed(2));
+            });
+
+            $("#subtotal").text(subtotal.toFixed(2) + " AED");
+            $("#totalDiscount").text(totalDiscount.toFixed(2) + " AED");
+            $("#grandTotal").text((subtotal - totalDiscount).toFixed(2) + " AED");
+        }
+
+        $(document).ready(function () {
+            updateTotals();
+
+            $(document).on("input", ".quantity-input, .discount-input", function () {
+                updateTotals();
+            });
+
+            $(document).on("click", ".remove-btn", function () {
+                $(this).closest("tr").remove();
+                updateTotals();
+            });
+
+            $("#checkoutBtn").click(function () {
+                alert("Proceeding to checkout...");
+                // TODO: Add redirect or payment logic
+            });
+        });
+    </script>
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        h2 {
+            font-weight: 600;
+        }
+
+        table thead {
+            background-color: #e9ecef;
+        }
+
+        table th, table td {
+            vertical-align: middle;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+        }
+
+        .btn-outline-danger {
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+        }
+
+        textarea {
+            resize: none;
+        }
+    </style>
+}
