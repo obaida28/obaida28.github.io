@@ -1,385 +1,486 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <base target="_blank"> <!-- Ensures all links open in a new tab -->
-<meta charset="utf-8"> <!-- Defines the character encoding as UTF-8 -->
-<title>Portfolio - Obaida Alnaheel</title> <!-- The title of the webpage displayed in the browser tab -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures the webpage is responsive on all devices -->
-<meta name="keywords" content="Obaida Alnaheel, Portfolio, Developer, Asp.net, Sql, Dotnet, .Net, Web"> <!-- Keywords for SEO optimization -->
-<meta property="og:title" content="Portfolio - Obaida Alnaheel"> <!-- Title displayed when the webpage is shared on social media -->
-<meta property="og:description" content="Explore Obaida Alnaheel's portfolio showcasing development skills and projects."> <!-- Description for social media sharing -->
-<meta property="og:image" content="img/Profile.png"> <!-- Image used when shared on social media -->
-<meta property="og:url" content="https://obaida28.github.io/"> <!-- URL of the portfolio page -->
-<meta property="og:type" content="website"> <!-- Indicates that the shared content is a webpage -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obaida Alnaheel - Backend & .NET Developer</title>
+    <meta name="description" content="Portfolio of Obaida Alnaheel, Backend & .NET Developer specializing in C#, ASP.NET Core, and SQL Server.">
+    <meta name="keywords" content="Obaida Alnaheel, Backend Developer, .NET Developer, C#, ASP.NET Core, SQL">
+    
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
+    <!-- Favicon -->
+    <link rel="icon" href="img/about.jpg">
+
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --accent-color: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+            --chip-bg: #f1f5f9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Profile Header */
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid var(--border-color);
+        }
+
+        .profile-name {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .profile-title {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .profile-bio {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 25px;
+            font-size: 0.98rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background: var(--chip-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: #e2e8f0;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .social-links a {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            transition: color 0.2s;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Content Sections */
+        .section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 35px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .section-title i {
+            color: var(--accent-color);
+        }
+
+        /* Skills Chips */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-chip {
+            background: var(--chip-bg);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.88rem;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Experience & Education Timelines */
+        .timeline-item {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 5px;
+        }
+
+        .role-title {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .company-name {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        /* Project Cards Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--card-bg);
+            transition: transform 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 15px;
+        }
+
+        .project-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .project-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .project-info a {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Details */
+        .contact-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.92rem;
+        }
+
+        .contact-item i {
+            color: var(--accent-color);
+            width: 20px;
+        }
+
+        .contact-item a {
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 600px) {
+            .profile-card, .section {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
         
+        <!-- Main Profile Header -->
+        <header class="profile-card">
+            <img src="img/about.jpg" alt="Obaida Alnaheel" class="profile-img">
+            <h1 class="profile-name">Obaida Alnaheel</h1>
+            <p class="profile-title">Backend & .NET Developer</p>
+            <p class="profile-bio">
+                Experienced .NET Developer with 5+ years specializing in building scalable Web APIs, Microservices, and optimizing database performance in C# and SQL environments.
+            </p>
+            <div class="action-buttons">
+                <a href="Obaida Alnaheel.pdf" target="_blank" class="btn btn-primary"><i class="fa-solid me-1 fa-eye"></i> View CV</a>
+                <a href="Obaida Alnaheel.pdf" download="Obaida_Alnaheel_CV.pdf" class="btn btn-secondary"><i class="fa-solid fa-download"></i> Download CV</a>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/obaida28" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/obaida28/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.facebook.com/share/XYxtFb7Jf9QJvQzD/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/eng.obaida.alnaheel/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </header>
 
-        <!-- Favicon -->
-        <link href="img/Profile.png" rel="icon">
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-code"></i> Skills & Expertise</h2>
+            <div class="skills-grid">
+                <span class="skill-chip">C# / .NET Core</span>
+                <span class="skill-chip">ASP.NET Core Web APIs</span>
+                <span class="skill-chip">Entity Framework Core</span>
+                <span class="skill-chip">RESTful Microservices</span>
+                <span class="skill-chip">MS SQL Server & MySQL</span>
+                <span class="skill-chip">Redis & Ocelot Gateway</span>
+                <span class="skill-chip">Git & Azure</span>
+                <span class="skill-chip">HTML5 / CSS3 / JavaScript</span>
+            </div>
+        </section>
 
-        <!-- Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:300;400;600;700;800&display=swap" rel="stylesheet">
-
-        <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="lib/slick/slick.css" rel="stylesheet">
-        <link href="lib/slick/slick-theme.css" rel="stylesheet">
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-        <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
-    </head>
-
-    <body data-spy="scroll" data-target=".navbar" data-offset="51">
-        <div class="wrapper">
-            <div class="sidebar">
-                <div class="sidebar-header">
-                    <img src="img/profile.jpg" alt="Image">
+        <!-- Work Experience -->
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="role-title">IT Support & Systems Specialist</span>
+                    <span class="timeline-date">Sep 2024 - Present</span>
                 </div>
-                <div class="sidebar-content">
-                    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-                        <a href="#" class="navbar-brand">Navigation</a>
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarCollapse">
-                            <ul class="nav navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#header">Home<i class="fa fa-home"></i></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#about">About<i class="fa fa-address-card"></i></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#experience">Experience<i class="fa fa-star"></i></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#portfolio">Portfolio<i class="fa fa-file-archive"></i></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#contact">Contact<i class="fa fa-envelope"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
+                <div class="company-name">Texas Equipment • Sharjah, UAE</div>
+                <p class="timeline-desc">
+                    Managed inventory & e-commerce systems for 2,500+ SKUs, streamlined software deployments between UAE & USA offices, and increased operational efficiency by 70%.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="role-title">Backend Developer</span>
+                    <span class="timeline-date">Aug 2023 - Feb 2024</span>
                 </div>
-                <div class="sidebar-footer">
-                    <a href="https://github.com/obaida28"><i class="fab fa-github"></i></a>
-                    <a class="btn" href="https://www.facebook.com/share/XYxtFb7Jf9QJvQzD/?mibextid=qi2Omg"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn" href="https://www.linkedin.com/in/obaida28/"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn" href="https://www.instagram.com/eng.obaida.alnaheel/"><i class="fab fa-instagram"></i></a>
+                <div class="company-name">Intology • Remote</div>
+                <p class="timeline-desc">
+                    Optimized WMS microservices and Web APIs using JWT authentication and Redis caching, cutting system response latency by 40%.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="role-title">Web / Backend Developer</span>
+                    <span class="timeline-date">Sep 2019 - Jan 2023</span>
+                </div>
+                <div class="company-name">Robotic Mind • Lattakia, Syria</div>
+                <p class="timeline-desc">
+                    Engineered 5 full-stack systems, optimized SQL database queries to improve performance by 80%, and secured API endpoints for 200+ daily concurrent users.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-folder-open"></i> Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <img src="img/marten.JPG" alt="Marten Do" class="project-img">
+                    <div class="project-info">
+                        <h4>Marten-Do</h4>
+                        <p>Robotic Mind project solution.</p>
+                        <a href="https://martendo.net/user" target="_blank">Visit Web App <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="img/albasheer.JPG" alt="Albasheer" class="project-img">
+                    <div class="project-info">
+                        <h4>Albasheer Iraq</h4>
+                        <p>Enterprise platform system.</p>
+                        <a href="https://www.albasheer-iraq.com" target="_blank">Visit Web App <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="img/gradProj.JPG" alt="X-Ray Clinic" class="project-img">
+                    <div class="project-info">
+                        <h4>X-Ray Clinic</h4>
+                        <p>Graduation web project.</p>
+                        <a href="http://xrayclinic.somee.com/" target="_blank">View Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="img/rental.jpg" alt="Rental App" class="project-img">
+                    <div class="project-info">
+                        <h4>Rental System</h4>
+                        <p>ASP.NET Core Application.</p>
+                        <a href="https://github.com/obaida28/Rental" target="_blank">GitHub Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+            
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="role-title">Master of Web Sciences (MWS)</span>
+                    <span class="timeline-date">2024 - Present</span>
+                </div>
+                <div class="company-name">Syrian Virtual University</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <span class="role-title">Bachelor of Software Engineering</span>
+                    <span class="timeline-date">2015 - 2023</span>
+                </div>
+                <div class="company-name">Tishreen University • Lattakia, Syria</div>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="section">
+            <h2 class="section-title"><i class="fa-solid fa-envelope"></i> Contact Me</h2>
+            <div class="contact-list">
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:alnaheel.obaida@gmail.com">alnaheel.obaida@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:+971562832528">+971 56 283 2528</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>United Arab Emirates</span>
                 </div>
             </div>
-            <div class="content">
-                <!-- Header Start -->
-                <div class="header" id="header">
-                    <div class="content-inner">
-                        <p>I'm</p>
-                        <h1 style="color:Tan">Obaida <br> Alnaheel</h1>
-                        <h2></h2>
-                        <div class="typed-text">.Net Developer, Web Developer, Back End Developer, Full Stack Developer, Sql Developer, Software Engineer</div>
-                    </div>
-                </div>
-                <!-- Header End -->
-                
-                <!-- Large Button Start -->
-                <div class="large-btn">
-                    <div class="content-inner">
-                        <a class="btn" style="background-color: #490808;" href="/Obaida Alnaheel.html"><i class="fa fa-eye"></i>CV</a>
-                        <a class="btn" href="/Obaida Alnaheel.pdf" download=""><i class="fa fa-download"></i>CV</a>
-                        <a class="btn" style="width: 100%;" href="#contact" target="_self"><i class="fa fa-hands-helping"></i>Hire Me</a>
-                    </div>
-                </div>
-                <!-- Large Button End -->
+        </section>
 
-                <!-- About Start -->
-                <div class="about" id="about">
-                    <div class="content-inner">
-                        <div class="content-header">
-                            <h2>About Me</h2>
-                        </div>
-                        <div class="row align-items-center">
-                            <div class="col-md-6 col-lg-5">
-                                <img src="img/about.jpg" alt="Image" style="border:5px solid #490808">
-                            </div>
-                            <div class="col-md-6 col-lg-7">
-                                <p>
-                                    .NET Developer with over 5 years of experience in designing and implementing scalable enterprise applications. Proficient in C#, ASP.NET Core, SQL Server optimization, and RESTful API development. Adept at leading technical initiatives and collaborating with cross-functional teams to deliver high-quality solutions that drive business outcomes. Proven track record of reducing system response times, resolving critical errors, and enhancing operational efficiency across multiple projects.
-                                </p>
-                                <a class="btn" href="#contact" target="_self">Hire Me</a>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <b>Web Design</b>
-                                    <ul>
-                                        <li>Html</li>
-                                        <li>CSS</li>
-                                        <li>JavaScript</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-5">
-                                    <b>Web Development</b>
-                                    <ul>
-                                        <li>C#</li>
-                                        <li>Asp.net Web Form</li>
-                                        <li>Asp.net Web Services</li>
-                                        <li>Asp.Net Core APIs</li>
-                                        <li>Entity Framework</li>
-                                        <li>Microsoft SQL Server</li>
-                                        <li>ABP Framework</li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-3">
-                                    <b>Management</b>
-                                    <ul>
-                                        <li>Git</li>
-                                        <li>Azure</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- About End -->
-                
-                <!-- Experience Start -->
-                <div class="experience" id="experience">
-                    <div class="content-inner">
-                        <div class="content-header">
-                            <h2>Experience</h2>
-                        </div>
-                        <div class="row align-items-center">
-                             <div class="col-md-12">
-                                <div class="exp-col">
-                                    <span>Sep-2024 <i>to</i> Now</span>
-                                    <h3>Texas Equipment</h3>
-                                    <h4>Sharjah - UAE</h4>
-                                    <h5>IT Support</h5>
-                                    <p>
-                                        Overhauled e-commerce and inventory systems for 2,500+ SKUs, led UAE–USA software rollouts, boosted sales efficiency by 70%, and drove 60% traffic growth through digital campaigns.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="exp-col">
-                                    <span>Aug-2023 <i>to</i> Feb-2024</span>
-                                    <h3>Intology</h3>
-                                    <h4>Remotely</h4>
-                                    <h5>back-end Developer</h5>
-                                    <p>
-                                        Optimized WMS APIs and microservices with caching and JWT, cutting latency 40%, boosting uptime to 99%, reducing crashes 75%, and improving release quality through Agile collaboration.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="exp-col">
-                                    <span>01-Sep-2019 <i>to</i> 31-Jan-2023</span>
-                                    <h3>Robotic Mind</h3>
-                                    <h4>Lattakia , Syria</h4>
-                                    <h5>Web Developer</h5>
-                                    <p>
-                                        Developed 5 full-stack systems and mobile inventory app, optimized databases (80% faster), secured APIs for 200+ users, and boosted revenue 35% through digital transformation.
-                                    </p>
-                                        <br>
-                                    <h5>Activities</h5>
-                                    <p>Zahhr Nisan Exhibition</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Experience End -->
+        <footer>
+            <p>© 2026 Obaida Alnaheel. All rights reserved.</p>
+        </footer>
 
-                <!-- Education Start -->
-                <div class="education" id="education">
-                    <div class="content-inner">
-                        <div class="content-header">
-                            <h2>Education</h2>
-                        </div>
-                        <div class="row align-items-center">
-                            <div class="col-md-12">
-                                <div class="edu-col">
-                                    <span>Feb-2024 <i>to</i> Present </span>
-                                    <h3>Master's degree</h3>
-                                    <h5>Syrian Virtual University</h4>
-                                    <p>Master in Web sciences.</p>
-                                    <br>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="edu-col">
-                                    <span>Sep-2015 <i>to</i> Sep-2023</span>
-                                    <h3>Bachelor Degree</h3>
-                                    <h5>Tishreen University , Lattakia , Syria</h4>
-                                    <p>Bachelor of Computer Science, Minor: Software Engineering.</p>
-                                    <br>
-                                    <h3>Activities</h3>
-                                    <p>SCPC Programming Competition - 2018 & 2019.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Education End -->
-                <!-- Work Portfolio Start -->
-                <div class="portfolio" id="portfolio">
-                    <div class="content-inner">
-                        <div class="content-header">
-                            <h2>Work Portfolio</h2>
-                        </div>
-                        <div class="row portfolio-container">
-                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
-                                <div class="portfolio-wrap">
-                                    <figure>
-                                        <img src="img/marten.JPG" class="img-fluid" alt="">
-                                        <a class="portfolio-title" href="https://martendo.net/user">marten-do<span>Robotic Mind</span></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
-                                <div class="portfolio-wrap">
-                                    <figure>
-                                        <img src="img/albasheer.JPG" class="img-fluid" alt="">
-                                        <a class="portfolio-title" href="https://www.albasheer-iraq.com">albasheer<span>Robotic Mind</span></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- <div class="col-lg-4 col-md-6 portfolio-item web-des">
-                                <div class="portfolio-wrap">
-                                    <figure>
-                                        <img src="img/amal.JPG" class="img-fluid" alt="">
-                                        <a class="portfolio-title" href="https://amal-academy.de/">amal-academy<span>Robotic Mind</span></a>
-                                    </figure>
-                                </div>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Work Portfolio End -->
-                <!-- Own Portfolio Start -->
-                <div class="portfolio" id="portfolio">
-                    <div class="content-inner">
-                        <div class="content-header">
-                            <h2>Own Portfolio</h2>
-                        </div>
-                        <div class="row portfolio-container">
-                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
-                                <div class="portfolio-wrap">
-                                    <figure>
-                                        <img src="img/gradProj.JPG" class="img-fluid" alt="">
-                                        <a href="http://xrayclinic.somee.com/" data-title="pation" class="link-preview" title="Patient"><i class="fa fa-eye"></i></a>
-                                        <a href="http://xrayclinic.somee.com/admin" class="link-details" title="Admin Panel"><i class="fa fa-user-shield"></i></a>
-                                        <a class="portfolio-title" href="http://xrayclinic.somee.com/">x-ray clinic <span>Graduate Project</span></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
-                                <div class="portfolio-wrap">
-                                    <figure>
-                                        <img src="img/cars.JPG" class="img-fluid" alt="">
-                                        <a class="portfolio-title" href="http://carsrental.somee.com">Cars ads<span>Project in University</span></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- <div class="col-lg-4 col-md-6 portfolio-item web-des">
-                                <div class="portfolio-wrap">
-                                    <figure>
-                                        <img src="img/todoList.JPG" class="img-fluid" alt="">
-                                        <a href="http://www.obaida.somee.com/_todoList/" data-title="todoList" class="link-preview" title="go to site"><i class="fa fa-eye"></i></a>
-                                        <a href="https://github.com/obaida28/toDoListReact.git" class="link-details" title="github"><i class="fab fa-github"></i></a>
-                                        <a class="portfolio-title" href="http://www.obaida.somee.com/_todoList/">ToDo List <span>React.js</span></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
-                                <div class="portfolio-wrap">
-                                    <figure>
-                                        <img src="img/tic-tac-toe.JPG" class="img-fluid" alt="">
-                                        <a href="http://www.obaida.somee.com/_tic-tac-toe/" class="link-preview" data-title="tic-tac-toe" title="go to site"><i class="fa fa-eye"></i></a>
-                                        <a href="https://github.com/obaida28/tic-tac-toe.git" class="link-details" title="github"><i class="fab fa-github"></i></a>
-                                        <a class="portfolio-title" href="http://www.obaida.somee.com/_tic-tac-toe/">tic-tac-toe <span>React.js</span></a>
-                                    </figure>
-                                </div>
-                            </div> -->
-                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
-                                <div class="portfolio-wrap">
-                                    <figure>
-                                        <img src="img/rental.jpg" class="img-fluid" alt="">
-                                        <a class="portfolio-title" href="https://github.com/obaida28/Rental"> Rental <span>ASP.NET Core</span></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 col-md-6 portfolio-item web-des">
-                                <div class="portfolio-wrap">
-                                    <figure>
-                                        <img src="img/ConvertDateToHijri.jpg" class="img-fluid" alt="">
-                                        <a class="portfolio-title" href="https://github.com/obaida28/ConvertGregorianCalendarToHijri"> Convert To Hijri <span>ASP.NET Windows Forms</span></a>
-                                    </figure>
-                                </div>
-                            </div>
-                            <!-- <div class="col-lg-4 col-md-6 portfolio-item web-des">
-                                <div class="portfolio-wrap">
-                                    <figure>
-                                        <img src="img/tic-tac-toe.JPG" class="img-fluid" alt="">
-                                        <a href="http://www.obaida.somee.com/_tic-tac-toe/" class="link-preview" data-title="tic-tack-toe" title="go to site"><i class="fa fa-eye"></i></a>
-                                        <a href="https://github.com/obaida28/obaida28-tic-tack-toe.git" class="link-details" title="github"><i class="fab fa-github"></i></a>
-                                        <a class="portfolio-title" href="#">tic-tack-toe <span>React.js</span></a>
-                                    </figure>
-                                </div>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Own Portfolio End -->
-                <!-- Contact Start -->
-                <div class="contact" id="contact">
-                    <div class="content-inner">
-                        <div class="content-header">
-                            <h2>Contact</h2>
-                        </div>
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <div class="contact-info">
-                                    <p><i class="fa fa-user"></i>Obaida Alnaheel</p>
-                                    <p><i class="fa fa-tag"></i>Web Developer</p>
-                                    <p><i class="fa fa-envelope"></i><a class="mailShow" href="mailto:alnaheel.obaida@gmail.com">alnaheel.obaida@gmail.com</a></p>
-                                    <p><i class="fa fa-phone"></i><a href="tel:+971562832528">+971-56 283 2528</a></p>
-                                    <p><i class="fa fa-map-marker"></i>United Arab Emirates</p>
-                                    <div class="social">
-                                        <!-- <a class="btn" href=""><i class="fab fa-twitter"></i></a> -->
-                                        <a class="btn" href="https://github.com/obaida28"><i class="fab fa-github"></i></a>
-                                        <a class="btn" href="https://www.facebook.com/share/XYxtFb7Jf9QJvQzD/?mibextid=qi2Omg"><i class="fab fa-facebook-f"></i></a>
-                                        <a class="btn" href="https://www.linkedin.com/in/obaida28/"><i class="fab fa-linkedin-in"></i></a>
-                                        <a class="btn" href="https://www.instagram.com/eng.obaida.alnaheel/"><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Contact End -->
-            </div>
-        </div>
-        
-        <!-- Back to Top -->
-        <a href="#" class="back-to-top"><i class="fa fa-angle-double-up"></i></a>
-        
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/slick/slick.min.js"></script>
-        <script src="lib/typed/typed.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-        <script src="https://smtpjs.com/v3/smtp.js"></script>
-        
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
-    </body>
+    </div>
+
+</body>
 </html>
